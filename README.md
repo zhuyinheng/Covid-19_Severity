@@ -1,3 +1,11 @@
+# Code and dataset of *A Learning-based Model for Assessment of Covid-19 Severity*
+
+***if you find it difficult to deploy/use/reproduce/modify it, feel free to start an issue or contact me: zhuyh19 AT mails.tsinghua.edu.cn.***
+
+If you are a hospital worker and want to use the method proposed in this paper, we develop a simple and easy-to-used tool [here](http://covid-19.zyh.science:8888/).
+
+If you want to reprocedure the result or use this code for other purpose, please follow the instructions below.
+
 ## requirement and environment
 1. python 3
 2. tested on ubuntu 18. it should work well on win and osx.
@@ -19,7 +27,7 @@ pip install shap==0.32.1 xgboost==0.90 tensorboardx tensorboard Flask gunicorn m
     - figures.zip: generated figures and videos
 ```
 
-## Reproduction
+## reproduction
 
 ### jupyter
 1. start jupyter `jupyter notebook --ip=0.0.0.0 --port=8888`
@@ -37,3 +45,7 @@ ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "${0%.*}.pdf"'
 1. `flask run --host=0.0.0.0 --port=8889`
 2. open brower and goto:`localhost:8889`
 
+## citation
+```
+
+```
