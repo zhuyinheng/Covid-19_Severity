@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<style>
+    .mlabel {
+        margin: auto;
+        width: 45%;
+        border: 4px solid #ccc;
+    }
+    form {
+        margin: auto;
+        width: 45%;
+    }
+
+    .result {
+        margin: auto;
+        width: 45%;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<head>
+    <title>Fight COVID-19: The risk of being severe</title>
+</head>
+<div class="mlabel">
+    * <strong>Usage:</strong> This is intended for use in assessment of COVID-19 severity.
+    By filling the values of three parameters in the required fields and comparing the output value with the cutoff value of 0.5, the risk of developing serious COVID-19 can be expected.<br>
+    * <strong>Disclaimer:</strong> The prediction is based on the method proposed in <a href="url">Our Paper</a> . Note that this assessment is not a substitute for professional diagnosis and should not be used as an alternative to professional healthcare.<br>
+    * <strong>Privacy Policy:</strong> We will not collect, storage any user data.
+    But if you want to contribute to this project with your data to improve the prediction model, please fill this <a href="url">Data Collecting Table</a> and send to zhuyh19 AT mails.tsinghua.edu.cn<br>
+    * <strong>Source Code and Dataset:</strong> <a href="https://github.com/cow8/Covid-19_Severity">github repo</a>
+</div>
+
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+
+        <legend>Input values:</legend>
+        Lymphocyte count, 10^9/L:
+        <input name="L" type="number" step="0.001" required>(tested in [0.11, 3.67])
+        <br>
+        <br> Lactic DeHydrogenase(LDH), U/L:
+        <input name="LDH" type="number" step="0.001" required>(tested in [82.5, 658.7])
+        <br>
+        <br> C-Reactive Protein(CRP), mg/L:
+        <input name="CRP" type="number"  step="0.001" required>(tested in [0.1, 210])
+        <br>
+        <br> Neutrophil count(N), 10^9/L:
+        <input name="N" type="number"  step="0.001" required>(tested in [0.64, 18.82])
+        <br>
+        <br>
+        * Age tested in [19,84]
+        <br>
+        <br>
+        * if above factors(e.g. Lymphocyte count, age) is outside tested interval, please refer to our paper to check if it's suitable for usage of this model.
+        <br>
+
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+    {% for variable, value in original_input.items() %}
+    <b>{{ variable }}</b> : {{ value }}
+    {% endfor %}
+    <br>
+    <br> The risk of being severe:
+    <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+<div align="center">
+    {{ visitor_count }} visitors have used this tool.
+    <br>Thanks <a href="https://github.com/alexanderrobertson">Alexander</a> for his <a href="https://blog.cambridgespark.com/deploying-a-machine-learning-model-to-the-web-725688b851c7">tutorial</a> on deployment of machine learning tool.
+</div>
+</html>
