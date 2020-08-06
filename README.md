@@ -1,4 +1,6 @@
-# Code and dataset of [*A Learning-based Model for Assessment of Covid-19 Severity*](https://www.cell.com/patterns/fulltext/S2666-3899(20)30120-3)
+# Code and dataset of *A Learning-based Model to Evaluate Hospitalization Priority in COVID-19 Pandemics*
+
+[Paper](https://www.cell.com/patterns/fulltext/S2666-3899(20)30120-3)
 
 ***if you find it difficult to deploy/use/reproduce/modify it, feel free to start an issue or contact me: zhuyh19 AT mails.tsinghua.edu.cn.***
 
