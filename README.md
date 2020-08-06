@@ -1,4 +1,4 @@
-# Code and dataset of *A Learning-based Model for Assessment of Covid-19 Severity*
+# Code and dataset of [*A Learning-based Model for Assessment of Covid-19 Severity*](https://www.cell.com/patterns/fulltext/S2666-3899(20)30120-3)
 
 ***if you find it difficult to deploy/use/reproduce/modify it, feel free to start an issue or contact me: zhuyh19 AT mails.tsinghua.edu.cn.***
 
@@ -34,7 +34,6 @@ pip install shap==0.32.1 xgboost==0.90 tensorboardx tensorboard Flask gunicorn m
 2. open brower and goto:`localhost:8888/notebooks/Reproduction.ipynb#`
 3. run all
 4. results are shown in the web notebook and saved to `./paper` folder at the same time
-5. 
 
 ### convert generate png figures to pdf
 ```
@@ -47,5 +46,10 @@ ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "${0%.*}.pdf"'
 
 ## citation
 ```
-
+@article{Zheng2020ALM,
+  title={A Learning-based Model to Evaluate Hospitalization Priority in COVID-19 Pandemics},
+  author={Yichao Zheng and Yinheng Zhu and Mengqi Ji and Rongpin Wang and Xinfeng Liu and Mudan Zhang and Choo Hui Qin and Lu Fang and Shao-hua Ma},
+  journal={Patterns (New York, N.y.)},
+  year={2020}
+}
 ```
